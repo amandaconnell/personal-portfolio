@@ -1,17 +1,30 @@
 ---
-
+import "../layouts/Layout.astro"
+import TheHeader from "../components/TheHeader.astro"
+import HeroSection from "../components/HeroSection.astro"
+import PortfolioSection from "../components/PortfolioSection.astro"
+import AboutSection from "../components/AboutSection.astro"
+import ContactSection from "../components/ContactSection.astro"
+import TheFooter from "../components/TheFooter.astro"
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Amanda Connell</title>
+  </head>
+  <body class="font-primary m-4 md:m-6 lg:m-8">
+	<TheHeader />
+    <main class="max-w-7xl mx-auto my-8 space-y-16">
+      <HeroSection />
+	  <PortfolioSection />
+	  <AboutSection />
+	  <div class="flex mx-auto border border-dashed w-2/3"></div>
+	  <ContactSection />
+    </main>
+	<TheFooter />
+  </body>
 </html>

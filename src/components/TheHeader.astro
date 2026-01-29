@@ -1,0 +1,100 @@
+---
+
+---
+
+<header class="pb-4 lg:pb-6 xl:pb-8">
+  <nav class="flex justify-between items-center">
+    <a href="/" class="heading text-lg p-2 border rounded-full">AC</a>
+    <ul class="hidden sm:flex gap-6">
+      <li>
+        <a href="/" class="py-2 active:text-black/75 group"
+          >Home
+          <div class="link-underline"></div></a
+        >
+      </li>
+      <li>
+        <a href="#" class="py-2 active:text-black/75 group"
+          >Portfolio
+          <div class="link-underline"></div></a
+        >
+      </li>
+      <li>
+        <a href="#" class="py-2 active:text-black/75 group"
+          >About
+          <div class="link-underline"></div></a
+        >
+      </li>
+      <li>
+        <a href="#" class="py-2 active:text-black/75 group"
+          >Contact
+          <div class="link-underline"></div></a
+        >
+      </li>
+    </ul>
+
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="sm:hidden">
+      <svg
+        class="w-8 h-8"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M4 6h16M4 12h16M9 18h11"></path>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile menu, hidden by default -->
+<ul id="mobile-menu" class="hidden">
+  <li class="py-2">
+    <a href="#" class="hover:border-l-4 hover:pl-2 active:text-black/75">Home</a
+    >
+  </li>
+  <li class="py-2">
+    <a href="#" class="hover:border-l-4 hover:pl-2 active:text-black/75"
+      >Portfolio</a
+    >
+  </li>
+  <li class="py-2">
+    <a href="#" class="hover:border-l-4 hover:pl-2 active:text-black/75"
+      >About</a
+    >
+  </li>
+  <li class="py-2">
+    <a href="#" class="hover:border-l-4 hover:pl-2 active:text-black/75"
+      >Contact</a>
+  </li>
+</ul>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  const btnOpen = `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M9 18h11"></path>
+  </svg>`;
+
+  const btnClose = `<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="6" y1="6" x2="18" y2="18" />
+    <line x1="6" y1="18" x2="18" y2="6" />
+  </svg>`;
+
+  menuBtn?.addEventListener("click", () => {
+    const menuOpen = !(mobileMenu?.classList.contains("hidden") ?? true);
+    mobileMenu?.classList.toggle("hidden");
+
+    menuBtn.style.transition = "opacity 0.2s ease";
+    menuBtn.style.opacity = "0";
+
+    setTimeout(() => {
+      menuBtn.innerHTML = menuOpen ? btnOpen : btnClose;
+      menuBtn.style.opacity = "1";
+    }, 100);
+  });
+</script>
