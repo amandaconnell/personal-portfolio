@@ -1,11 +1,11 @@
 ---
-import "../layouts/Layout.astro"
-import TheHeader from "../components/TheHeader.astro"
-import HeroSection from "../components/HeroSection.astro"
-import PortfolioSection from "../components/PortfolioSection.astro"
-import AboutSection from "../components/AboutSection.astro"
-import ContactSection from "../components/ContactSection.astro"
-import TheFooter from "../components/TheFooter.astro"
+import "../layouts/Layout.astro";
+import TheHeader from "../components/TheHeader.astro";
+import HeroSection from "../components/HeroSection.astro";
+import PortfolioSection from "../components/PortfolioSection.astro";
+import AboutSection from "../components/AboutSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import TheFooter from "../components/TheFooter.astro";
 ---
 
 <html lang="en">
@@ -15,16 +15,21 @@ import TheFooter from "../components/TheFooter.astro"
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Amanda Connell</title>
+    <script
+      src="https://kit.fontawesome.com/ecf5d3bcbf.js"
+      crossorigin="anonymous"></script>
   </head>
-  <body class="font-primary m-4 md:m-6 lg:m-8">
-	<TheHeader />
-    <main class="max-w-7xl mx-auto my-8 space-y-16">
+  <body class="font-primary">
+    <TheHeader />
+    <main class="max-w-7xl mx-auto my-8 p-4 md:p-6 lg:p-8 space-y-24">
       <HeroSection />
-	  <PortfolioSection />
-	  <AboutSection />
-	  <div class="flex mx-auto border border-dashed w-2/3"></div>
-	  <ContactSection />
+      <PortfolioSection />
+      <div class="flex flex-col lg:flex-row gap-24">
+        <AboutSection />
+        <div class="flex border"></div>
+        <ContactSection />
+      </div>
     </main>
-	<TheFooter />
+    <TheFooter />
   </body>
 </html>
