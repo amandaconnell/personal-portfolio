@@ -6,6 +6,8 @@
   --font-secondary: "Libre Baskerville", serif;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer components {
   .heading {
     @apply font-secondary italic uppercase text-3xl;
@@ -16,7 +18,7 @@
   }
 
   .btn-hover {
-    @apply hover:bg-black hover:text-white;
+    @apply hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black;
   }
 
   .container {
@@ -33,5 +35,9 @@
 
   .pill {
     @apply text-xs bg-neutral-200 text-neutral-700 py-1 px-2 mb-4 self-start rounded-full;
+  }
+
+  .focus-indicator {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-600;
   }
 }

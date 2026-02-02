@@ -18,8 +18,28 @@ import TheFooter from "../components/TheFooter.astro";
     <script
       src="https://kit.fontawesome.com/ecf5d3bcbf.js"
       crossorigin="anonymous"></script>
+
+    <!-- To avoid FOUC (Flash of Unstyled Content) -->
+    <script is:inline>
+      {
+        (function () {
+          try {
+            const theme = localStorage.getItem("theme");
+            if (
+              theme === "dark" ||
+              (!theme &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+              document.documentElement.classList.add("dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+            }
+          } catch (e) {}
+        })();
+      }
+    </script>
   </head>
-  <body class="font-primary">
+  <body class="font-primary dark:bg-zinc-900 dark:text-zinc-200">
     <TheHeader />
     <main class="max-w-7xl mx-auto my-8 p-4 md:p-6 lg:p-8 space-y-24">
       <HeroSection />

@@ -1,36 +1,47 @@
 ---
-
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header class="p-4 md:p-6 lg:p-8">
   <nav class="flex justify-between items-center">
-    <a href="/" class="heading text-lg p-2 border rounded-full">AC</a>
-    <ul class="hidden sm:flex gap-6">
-      <li>
-        <a href="/" class="py-2 active:text-black/75 group"
-          >Home
-          <div class="link-underline"></div></a
-        >
-      </li>
-      <li>
-        <a href="#portfolio" class="py-2 active:text-black/75 group"
-          >Portfolio
-          <div class="link-underline"></div></a
-        >
-      </li>
-      <li>
-        <a href="#about" class="py-2 active:text-black/75 group"
-          >About
-          <div class="link-underline"></div></a
-        >
-      </li>
-      <li>
-        <a href="#contact" class="py-2 active:text-black/75 group"
-          >Contact
-          <div class="link-underline"></div></a
-        >
-      </li>
-    </ul>
+    <a href="/" class="heading text-lg p-2 border rounded-full focus-indicator"
+      >AC</a
+    >
+    <div class="flex items-center gap-8">
+      <ul class="hidden sm:flex gap-6">
+        <li>
+          <a href="/" class="py-2 active:text-black/75 focus-indicator group"
+            >Home
+            <div class="link-underline"></div></a
+          >
+        </li>
+        <li>
+          <a
+            href="#portfolio"
+            class="py-2 active:text-black/75 focus-indicator group"
+            >Portfolio
+            <div class="link-underline"></div></a
+          >
+        </li>
+        <li>
+          <a
+            href="#about"
+            class="py-2 active:text-black/75 focus-indicator group"
+            >About
+            <div class="link-underline"></div></a
+          >
+        </li>
+        <li>
+          <a
+            href="#contact"
+            class="py-2 active:text-black/75 focus-indicator group"
+            >Contact
+            <div class="link-underline"></div></a
+          >
+        </li>
+      </ul>
+      <ThemeToggle />
+    </div>
 
     <!-- Mobile menu button -->
     <button id="menu-btn" class="sm:hidden">
