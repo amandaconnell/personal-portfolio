@@ -4,37 +4,41 @@ import ThemeToggle from "./ThemeToggle.astro";
 
 <header class="p-4 md:p-6 lg:p-8">
   <nav class="flex justify-between items-center">
-    <a href="/" class="heading text-lg p-2 border rounded-full focus-indicator"
-      >AC</a
-    >
+    <a
+      href="/"
+      class="font-secondary font-bold text-4xl tracking-wider -translate-y-1.5 focus-indicator"
+      >AC.
+    </a>
     <div class="flex items-center gap-8">
-      <ul class="hidden sm:flex gap-6">
+      <ul class="hidden sm:flex gap-10 text-lg">
         <li>
-          <a href="/" class="py-2 active:text-black/75 focus-indicator group"
+          <a
+            href="/"
+            class="py-2 active:text-black/75 dark:active:text-orange-50/75 focus-indicator group"
             >Home
             <div class="link-underline"></div></a
           >
         </li>
         <li>
           <a
-            href="#portfolio"
-            class="py-2 active:text-black/75 focus-indicator group"
-            >Portfolio
+            href="/work/"
+            class="py-2 active:text-black/75 dark:active:text-orange-50/75 focus-indicator group"
+            >Work
             <div class="link-underline"></div></a
           >
         </li>
         <li>
           <a
-            href="#about"
-            class="py-2 active:text-black/75 focus-indicator group"
+            href="/about/"
+            class="py-2 active:text-black/75 dark:active:text-orange-50/75 focus-indicator group"
             >About
             <div class="link-underline"></div></a
           >
         </li>
         <li>
           <a
-            href="#contact"
-            class="py-2 active:text-black/75 focus-indicator group"
+            href="/contact/"
+            class="py-2 active:text-black/75 dark:active:text-orange-50/75 focus-indicator group"
             >Contact
             <div class="link-underline"></div></a
           >
@@ -44,7 +48,7 @@ import ThemeToggle from "./ThemeToggle.astro";
     </div>
 
     <!-- Mobile menu button -->
-    <button id="menu-btn" class="sm:hidden">
+    <button id="menu-btn" class="sm:hidden focus-indicator">
       <svg
         class="w-8 h-8"
         fill="none"
@@ -64,22 +68,30 @@ import ThemeToggle from "./ThemeToggle.astro";
 <!-- Mobile menu, hidden by default -->
 <ul id="mobile-menu" class="hidden p-4">
   <li class="py-2">
-    <a href="/" class="hover:border-l-4 hover:pl-2 active:text-black/75">Home</a
+    <a
+      href="/"
+      class="hover:border-l-4 hover:pl-2 active:border-l-4 active:pl-2 active:text-black/75 dark:active:text-orange-50/75 focus-indicator"
+      >Home</a
     >
   </li>
   <li class="py-2">
     <a
-      href="#portfolio"
-      class="hover:border-l-4 hover:pl-2 active:text-black/75">Portfolio</a
+      href="/work/"
+      class="hover:border-l-4 hover:pl-2 active:border-l-4 active:pl-2 active:text-black/75 dark:active:text-orange-50/75 focus-indicator"
+      >Work</a
     >
   </li>
   <li class="py-2">
-    <a href="#about" class="hover:border-l-4 hover:pl-2 active:text-black/75"
+    <a
+      href="/about/"
+      class="hover:border-l-4 hover:pl-2 active:border-l-4 active:pl-2 active:text-black/75 dark:active:text-orange-50/75 focus-indicator"
       >About</a
     >
   </li>
   <li class="py-2">
-    <a href="#contact" class="hover:border-l-4 hover:pl-2 active:text-black/75"
+    <a
+      href="/contact/"
+      class="hover:border-l-4 hover:pl-2 active:border-l-4 active:pl-2 active:text-black/75 dark:active:text-orange-50/75 focus-indicator"
       >Contact</a
     >
   </li>

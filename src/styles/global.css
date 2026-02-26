@@ -1,24 +1,35 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Miloner";
+  src: url("/fonts/MILONER-Medium.woff") format("woff");
+  src: url("/fonts/MILONER-Medium.woff2") format("woff2");
+}
 
 @theme {
   --font-primary: "Poppins", sans-serif;
-  --font-secondary: "Libre Baskerville", serif;
+  --font-secondary: "Miloner", serif;
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer components {
   .heading {
-    @apply font-secondary italic uppercase text-3xl;
+    @apply font-secondary font-bold text-3xl;
+  }
+
+  .sub-heading {
+    @apply font-semibold uppercase text-2xl;
   }
 
   .btn {
-    @apply py-2 px-4 mt-2 border rounded-full transition-all duration-300 active:scale-95;
+    @apply py-2 px-4 mt-2 border rounded-full text-lg md:text-xl text-rose-600 transition-all duration-300 active:scale-95 active:bg-rose-600 active:text-white active:dark:text-gray-900;
   }
 
   .btn-hover {
-    @apply hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black;
+    @apply hover:bg-rose-600 hover:text-white hover:dark:text-gray-900;
   }
 
   .container {
@@ -26,7 +37,7 @@
   }
 
   .link-underline {
-    @apply bg-black h-0.5 w-0 group-hover:w-full transition-all duration-400;
+    @apply bg-black dark:bg-orange-50 h-0.5 w-0 group-hover:w-full transition-all duration-400;
   }
 
   .card {
@@ -38,6 +49,6 @@
   }
 
   .focus-indicator {
-    @apply focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-green-600;
+    @apply focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-rose-600;
   }
 }

@@ -1,55 +1,25 @@
 ---
-import "../layouts/Layout.astro";
-import TheHeader from "../components/TheHeader.astro";
-import HeroSection from "../components/HeroSection.astro";
-import PortfolioSection from "../components/PortfolioSection.astro";
-import AboutSection from "../components/AboutSection.astro";
-import ContactSection from "../components/ContactSection.astro";
-import TheFooter from "../components/TheFooter.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Amanda Connell</title>
-    <script
-      src="https://kit.fontawesome.com/ecf5d3bcbf.js"
-      crossorigin="anonymous"></script>
-
-    <!-- To avoid FOUC (Flash of Unstyled Content) -->
-    <script is:inline>
-      {
-        (function () {
-          try {
-            const theme = localStorage.getItem("theme");
-            if (
-              theme === "dark" ||
-              (!theme &&
-                window.matchMedia("(prefers-color-scheme: dark)").matches)
-            ) {
-              document.documentElement.classList.add("dark");
-            } else {
-              document.documentElement.classList.remove("dark");
-            }
-          } catch (e) {}
-        })();
-      }
-    </script>
-  </head>
-  <body class="font-primary dark:bg-zinc-900 dark:text-zinc-200">
-    <TheHeader />
-    <main class="max-w-7xl mx-auto my-8 p-4 md:p-6 lg:p-8 space-y-24">
-      <HeroSection />
-      <PortfolioSection />
-      <div class="flex flex-col lg:flex-row gap-24">
-        <AboutSection />
-        <div class="flex border"></div>
-        <ContactSection />
-      </div>
-    </main>
-    <TheFooter />
-  </body>
-</html>
+<Layout title="Amanda Connell">
+  <div class="container mt-20 sm:mt-40">
+    <p class="text-xl">Hello there</p>
+    <h1 class="heading uppercase text-7xl md:text-8xl text-rose-600">
+      I'm Amanda
+    </h1>
+    <p class="uppercase text-4xl">Web Designer & Developer</p>
+    <p class="max-w-2xl text-lg">
+      With an eye for details and a soft spot for accessibility, I strive to
+      build creative and engaging user experiences.
+    </p>
+    <div class="flex gap-4">
+      <a href="/work/" class="btn btn-hover self-start focus-indicator"
+        >View portfolio</a
+      >
+      <a href="/contact/" class="btn btn-hover self-start focus-indicator"
+        >Contact me</a
+      >
+    </div>
+  </div>
+</Layout>

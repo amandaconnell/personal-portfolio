@@ -1,3 +1,46 @@
 ---
+import TheFooter from "../components/TheFooter.astro";
+import TheHeader from "../components/TheHeader.astro";
 import "../styles/global.css";
+const { title } = Astro.props;
 ---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <!-- To avoid FOUC (Flash of Unstyled Content) -->
+    <script is:inline>
+      {
+        (function () {
+          try {
+            const theme = localStorage.getItem("theme");
+            if (
+              theme === "dark" ||
+              (!theme &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+            ) {
+              document.documentElement.classList.add("dark");
+            } else {
+              document.documentElement.classList.remove("dark");
+            }
+          } catch (e) {}
+        })();
+      }
+    </script>
+  </head>
+  <body
+    class="flex flex-col h-lvh font-primary dark:bg-gray-900 dark:text-orange-50"
+  >
+    <TheHeader />
+    <main
+      class="max-w-7xl flex grow place-self-center p-4 md:p-6 lg:p-8 space-y-24"
+    >
+      <slot />
+    </main>
+    <TheFooter />
+  </body>
+</html>
